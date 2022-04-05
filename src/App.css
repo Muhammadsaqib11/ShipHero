@@ -176,6 +176,7 @@ input[type="radio"] {
   color: black;
 }
 .btnSubmit{
+  text-align: center;
   font-weight: 600;
   font-size: 12px;
   width: 88%;
@@ -184,6 +185,7 @@ input[type="radio"] {
   border: none;
   border-radius: 0.2rem;
   padding:2%;
+  cursor: pointer;
 }
 .btnForgetPwd{
   color: rgb(50, 129, 253);

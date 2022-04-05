@@ -55,9 +55,7 @@ const OnOpen =()=>{
   function logoutFunction() {
     localStorage.clear();
     localStorage.removeItem("JWT");
-    localStorage.removeItem("SidebarData");
-    localStorage.removeItem("form");
-    props.history.push("/login");
+    props.history.push("/");
   }
   function closeNav() {
     document.getElementById("sidebar").style.backgroundColor = "white";
@@ -86,8 +84,8 @@ const OnOpen =()=>{
             <a href="#">Edit<i class="fa fa-cog menu-icon fa-2x" aria-hidden="true"></i></a>
         </li>
         <li>
-            <a href="#">log out<i class="fa fa-sign-out menu-icon fa-2x" aria-hidden="true"></i>
-                </a>
+            <Link onClick={logoutFunction}>log out<i class="fa fa-sign-out menu-icon fa-2x" aria-hidden="true"></i>
+                </Link>
         </li>
 
     </ul>

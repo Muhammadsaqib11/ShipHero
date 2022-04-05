@@ -116,7 +116,7 @@ export default function ForgotPassword(props) {
   
                 <div className="signupLink" style={{paddingRight:'10%'}}>
                   
-                  <a href="#" className="btnForgetPwd" value="Login">Take me Back to Login?</a>
+                  <Link to="/" className="btnForgetPwd" value="Login">Take me Back to Login?</Link>
                   </div>
              
             </div>

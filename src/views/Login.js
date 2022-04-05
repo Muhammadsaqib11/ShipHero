@@ -24,8 +24,8 @@ const useStyles = makeStyles({
 export default function Login(props) {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("1234567");
+  const [email, setEmail] = useState("saqib@gmail.com");
   const [error, setError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -49,48 +49,52 @@ export default function Login(props) {
   const authenticate = (e) => {
     e.preventDefault();
     // console.log("auth");
-
-    // props.history.push("/");
+    localStorage.setItem("JWT", "token");
+    props.history.push("/dashbord");
     // if (email.length <= 3 || password.length <= 3 || error || loading) {
     //   setError(true);
     // } else {
-    setLoading(true);
-    api
-      .login({ email, password })
-      .then((res) => {
-        console.log("res", res);
-        if (res.data.status === 422) {
-          createNotification("error", res.data.message, "Status");
-          console.log("message", res.data.message);
-        } else {
-          dispatch(setAuthInfo(res.data));
-          console.log("response", res.data);
-          localStorage.setItem("JWT", res.data.message.token);
-          localStorage.setItem("UserId", res.data.message.id);
-          createNotification("success", "Login Successfully");
-          props.history.push("/");
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log("err", err);
-        if (err.data.errors.email) {
-          setError(true);
-          setEmailError(err.data.errors.email[0]);
-        }
-        if (err.data.errors.password) {
-          setError(true);
-          setPasswordError(err.data.errors.password[0]);
-        }
-        setLoading(false);
+    // setLoading(true);
+    // api
+    //   .login({ email, password })
+    //   .then((res) => {
+    //     console.log("res", res);
+    //     if (res.data.status === 422) {
+    //       createNotification("error", res.data.message, "Status");
+    //       console.log("message", res.data.message);
+    //     } else {
+    //       dispatch(setAuthInfo(res.data));
+    //       console.log("response", res.data);
+    //       localStorage.setItem("JWT", res.data.message.token);
+    //       localStorage.setItem("UserId", res.data.message.id);
+    //       createNotification("success", "Login Successfully");
+    //       props.history.push("/");
+    //     }
+    //     setLoading(false);
+    //   })
+    //   .catch((err) => {
+    //     console.log("err", err);
+    //     if (err.data.errors.email) {
+    //       setError(true);
+    //       setEmailError(err.data.errors.email[0]);
+    //     }
+    //     if (err.data.errors.password) {
+    //       setError(true);
+    //       setPasswordError(err.data.errors.password[0]);
+    //     }
+    //     setLoading(false);
 
-        // createNotification(
-        //   "error",
-        //   err.data?.message ?? "Something went wrong please try again later"
-        // );
-      });
+    //     // createNotification(
+    //     //   "error",
+    //     //   err.data?.message ?? "Something went wrong please try again later"
+    //     // );
+    //   });
     // }
+
+
   };
+
+  console.log("Email", email)
   return (
     <div className="login-container">
     <div className="row">
@@ -105,18 +109,28 @@ export default function Login(props) {
             <h2>  Welcome Back</h2> 
                 <div className="form-group">
                   <label className="labelform">Email</label>
-                    <input type="text" className="form-control input_field" placeholder="Your Email *" value="" />
+                    <input type="text"
+                    name="email"
+                    className="form-control input_field" 
+                    placeholder="Your Email *"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)} />
                 </div>
                 <div className="form-group">
                 <label>Password</label>
 
-                    <input type="password" className="form-control input_field" placeholder="Your Password *" value="" />
+                    <input type="password"
+                     name = "password"
+                    className="form-control input_field"
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}  
+                    placeholder="Your Password *"  />
                 </div>
                 <div className="form-group">
-                    <a href="#" className="btnForgetPwd" value="Login">Forget Password?</a>
+                    <Link to ="/forgot-password" className="btnForgetPwd" value="Login">Forget Password?</Link>
                 </div>
                 <div className="form-group">
-                    <input type="submit" className="btnSubmit" value="Login" />
+                    <input className="btnSubmit" value="Login" onClick={authenticate} />
                 </div>
                 <div className="deviderMain">
                   <hr style={{width:'40%' , height:'1px'}}/>
@@ -128,7 +142,7 @@ export default function Login(props) {
                 </div>
                 <div className="signupLink">
                   <p>Dont have an account ?</p>
-                  <a href="#" className="RedirectionLink" value="Login">Forget Password?</a>
+                  <Link to ="/register" className="RedirectionLink" value="Login">Register?</Link>
 
 
                   </div>
