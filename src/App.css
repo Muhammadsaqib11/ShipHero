@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins';
+  background-color: #f8f9fa;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.logo-image {
+  height: 60px;
+  width: 120px;
+}
+
+form .form-control {
+  border-radius: 40px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+
+}
+.input_field{
+  width: 86% !important;
+}
+
+.h-100vh {
+  min-height: 100vh !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+/* 
+.navbar-login {
+  width: 305px;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.navbar-login-session {
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.icon-size {
+  font-size: 87px;
+}
+
+.bg-light-grey {
+  background-color: #FBFBFB !important;
+}
+
+.custom-text-fields-register {
+  display: flex;
+}
+
+table tbody tr {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .custom-text-fields-register {
+    display: block;
+  }
+  #main-app-nav .desktop-links a.nav-link {
+    padding: 5px !important;
+  }
+}
+
+input[type="radio"] {
+  position: unset !important;
+  left: 0 !important;
+  opacity: 1 !important;
+  height: 20px;
+  width: 20px;
+}
+
+.font-20px {
+  font-size: 20px !important;
+}
+
+.font-40px {
+  font-size: 40px !important;
+}
+
+.card-hover {
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  border: 2px solid green;
+} */
+
+
+.login-container{
+  /* margin-top: 5%;
+  margin-bottom: 5%; */
+}
+.login-logo{
+  position: relative;
+  margin-left: -41.5%;
+}
+.login-logo img{
+  position: absolute;
+  width: 12%;
+  margin-left: 1rem;
+  margin-top: 50%;
+  background:#2F74DC;
+  border-radius: 5rem;
+  padding: 2%;
+}
+.login-form-1{
+  /* padding: 9%; */
+  height: 96vh !important;
+  background:#2F74DC;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+  text-align: left;
+  margin-bottom:11%;
+  color:#fff;
+}
+.login-form-2{
+  height: 96vh !important;
+  /* padding: 4%; */
+    padding-right: 7%;
+    padding-top: 2%;
+  background: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  padding-left: 12%;
+}
+.login-form-2 h3{
+  /* text-align: center; */
+  margin-bottom:1%;
+  color: black;
+}
+
+.login-form-2 h2{
+  /* text-align: center; */
+  margin-bottom:5%;
+  color: black;
+}
+
+.forgotpassword-form-2{
+  height: 96vh !important;
+  /* padding: 4%; */
+    padding-right: 7%;
+    padding-top: 10%;
+  background: white;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  padding-left: 12%;
+}
+.forgotpassword-form-2 h3{
+  /* text-align: center; */
+  margin-bottom:1%;
+  color: black;
+}
+
+.forgotpassword-form-2 h2{
+  /* text-align: center; */
+  margin-bottom:5%;
+  color: black;
+}
+.btnSubmit{
+  font-weight: 600;
+  font-size: 12px;
+  width: 88%;
+  color: white;
+  background-color: rgb(50, 129, 253);
+  border: none;
+  border-radius: 0.2rem;
+  padding:2%;
+}
+.btnForgetPwd{
+  color: rgb(50, 129, 253);
+  font-weight:700;
+  font-size: 14px;
+  text-decoration: none;
+}
+.RedirectionLink{
+  color: rgb(50, 129, 253);
+  font-weight:300;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.labelform{
+  color: gray;
+  font-size: 14px;
+}
+.btnForgetPwd:hover{
+  text-decoration:none;
+  /* color:; */
+}
+
+.deviderMain{
+  display: flex;
+  flex-direction: row;
+}
+.deviderMain span{
+  font-size: 12px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.signupLink{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10%;
+}
+
+.loginLink{
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0%;
+}
+.loginLink1{   
+   height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0%;
+}
+.loginLink1 p{
+  font-size: 14px;
+  color: black;
+  margin-top: 3%;
+  margin-right: 1%;
+}
+
+.loginLink p{
+  font-size: 14px;
+  color: black;
+  margin-top: 3%;
+  margin-right: 1%;
+}
+
+.signupLink p{
+  font-size: 12px;
+  color: darkgray;
+  margin-top: 3%;
+  margin-right: 1%;
+}
