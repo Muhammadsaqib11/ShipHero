@@ -1,97 +1,324 @@
-import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
-import "react-perfect-scrollbar/dist/css/styles.css";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import { useSelector, useDispatch } from "react-redux";
-import logo from "../../Assets/Img/logo.png";
-import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-import $ from "jquery";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import PersonIcon from "@material-ui/icons/Person";
-import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
-import CallMadeIcon from "@material-ui/icons/CallMade";
-import CallSplitIcon from "@material-ui/icons/CallSplit";
-import AssignmentIcon from "@material-ui/icons/Assignment";
-import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
-import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import AddToHomeScreenIcon from "@material-ui/icons/AddToHomeScreen";
-import ClearIcon from "@material-ui/icons/Clear";
-import IconButton from "@material-ui/core/IconButton";
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import MailIcon from '@material-ui/icons/MoveToInbox';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import SendIcon from '@material-ui/icons/Send';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
+import LocalOfferTwoToneIcon from '@material-ui/icons/LocalOfferTwoTone';
+import CachedTwoToneIcon from '@material-ui/icons/CachedTwoTone';
+import MoveToInboxOutlinedIcon from '@material-ui/icons/MoveToInboxOutlined';
+import Sidebarlogo from '../../Assets/Img/Sidebarlogo.png'
+import shipHero from '../../Assets/Img/shipHero.png'
+import vendor from '../../Assets/Img/vendor.png'
+import invoice1 from '../../Assets/Img/invoice1.png'
+import store from '../../Assets/Img/store.png'
+import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
+import orders from '../../Assets/Img/orders.png'
+import shipment from '../../Assets/Img/shipment.png'
+import postHero from '../../Assets/Img/postHero.png'
 
-import "./sidebar-menu.css";
 
-const localData = localStorage.getItem("userStatus");
-const rankingData = JSON.parse(localData);
 
-const userData = localStorage.getItem("userInfo");
-const getUserInfo = JSON.parse(userData);
-function Sidebar(props) {
-  const [email_menu, setEmail_menu] = useState(true);
-  const [dashboard_menu, setDashboard_menu] = useState(true);
-  const [sidebarState, setSidebarState] = useState(true);
 
-const OnClose =()=>{
-  console.log("SIDEBAR", sidebarState);
-  setSidebarState(true)
-  if(sidebarState){
-    document.getElementById("sidebar").style.marginLeft = "-180px";
+
+
+
+
+
+
+
+
+import './sidebar-menu.css'
+const drawerWidth = 240;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: 36,
+  },
+  hide: {
+    display: 'none',
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+  },
+  drawerOpen: {
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerClose: {
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: 'hidden',
+    width: theme.spacing(7) + 1,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9) + 1,
+    },
+  },
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+  Nestedroot: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
+  primaryColor:{
+    fontSize:'14px',
+    color:'#3f51b5',
+    fontWeight:'bold'
   }
-}
-const OnOpen =()=>{
-  console.log("close")
-    document.getElementById("sidebar").style.marginLeft = "-0px";
+}));
+
+export default function MiniDrawer() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState(false);
+  const [openReportMenu, setOpenReportMenu] = React.useState(false);
+
+
+
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleClick = () => {
+    setOpenMenu(!openMenu);
+  };
+
+  const handleClickReport = () => {
+    setOpenReportMenu(!openReportMenu);
+  };
+
   
-}
 
-  useEffect(() => {
-    setSidebarState(true)
-    if(sidebarState){
-      document.getElementById("sidebar").style.marginLeft = "-180px";
-    }
-  });
-  function logoutFunction() {
-    localStorage.clear();
-    localStorage.removeItem("JWT");
-    props.history.push("/");
-  }
-  function closeNav() {
-    document.getElementById("sidebar").style.backgroundColor = "white";
-  }
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <div class="sidebar" id="sidebar" onMouseOver={OnOpen}>
+    <div className={classes.root}>
+      <CssBaseline />
 
-    <ul class="sidebar-nav" >
-        <li>
-       
-          <Link id="navbar-toggle" className="collapsileNavbar" > Close 
-        <span > <MenuIcon /> </span>
-         
-          </Link>
-         
-            
-        </li>
-        <li>
-            <a href="#">Home </a>
-        </li>
-        <li>
-            <a href="#">Download<i class="fa fa-download menu-icon fa-2x" aria-hidden="true"></i></a>
-        </li>
-        <li>
-            <a href="#">Edit<i class="fa fa-cog menu-icon fa-2x" aria-hidden="true"></i></a>
-        </li>
-        <li>
-            <Link onClick={logoutFunction}>log out<i class="fa fa-sign-out menu-icon fa-2x" aria-hidden="true"></i>
-                </Link>
-        </li>
+      <Drawer
+        variant="permanent"
+        onMouseOver={handleDrawerOpen}
+        onMouseLeave={handleDrawerClose}
+        className={clsx(classes.drawer, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open,
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          }),
+        }}
+      >
+        {/* <div className={classes.toolbar}> */}
+        <List>
+        <ListItem >
+              <ListItemIcon> <img src={Sidebarlogo} alt=""/> </ListItemIcon>
+              <ListItemText className={classes.primaryColor}> <img src={shipHero} alt=""/> </ListItemText>
+            </ListItem>
+        </List>
+          {/* <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton> */}
+        {/* </div> */}
+        <Divider />
+        <List>
+        <ListItem >
+              <ListItemIcon> <DashboardIcon color="primary" /> </ListItemIcon>
+              <ListItemText className={classes.primaryColor}> <span className="primaryColor">Dashboard</span></ListItemText>
+            </ListItem>
+        </List>
+  
+        
+   <List
+      component="nav"
+      aria-labelledby="nested-list-subheader"
+      className={classes.Nestedroot}
+    >
 
-    </ul>
-</div>
-   
+      <ListItem button onClick={handleClickReport}>
+        <ListItemIcon>
+        <img src={orders} alt="" style={{width:'50%' , color:'darkgray'}}/>
+
+        </ListItemIcon>
+        <ListItemText primary="Orders" />
+        {openMenu ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={openReportMenu} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon>
+            <ListItemText  >Orders</ListItemText>
+          </ListItem>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon>
+            <ListItemText primary="Upload CSV" />
+          </ListItem>
+        </List>
+      </Collapse>
+    </List>
+    <List>
+        <ListItem >
+              <ListItemIcon> <LocalOfferTwoToneIcon style={{color:"#8392A7"}} /> </ListItemIcon>
+              <ListItemText className={classes.primaryColor}> <span>Products</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem >
+              <ListItemIcon><img src={shipment} alt="" style={{width:'50%' , color:'darkgray'}}/> </ListItemIcon>
+              <ListItemText > <span >Shipping Plans</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem >
+              <ListItemIcon> <CachedTwoToneIcon style={{color:"#8392A7"}} /> </ListItemIcon>
+              <ListItemText > <span >Returns</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem >
+              <ListItemIcon>  <img src={postHero} alt="" style={{width:'50%' , color:'darkgray'}}/> </ListItemIcon>
+              <ListItemText > <span >Post Hero</span></ListItemText>
+            </ListItem>
+        </List>
+        <List
+      component="nav"
+      aria-labelledby="nested-list-subheader"
+      className={classes.Nestedroot}
+    >
+
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <LocalAtmIcon style={{color:"#8392A7"}}/>
+        </ListItemIcon>
+        <ListItemText primary="Reports" />
+        {openMenu ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={openMenu} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon>
+            <ListItemText  >Shipment</ListItemText>
+          </ListItem>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon>
+            <ListItemText primary="Shipped Item" />
+          </ListItem>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon>
+            <ListItemText primary="Order Permanently" />
+          </ListItem>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon>
+            <ListItemText primary="Storage" />
+          </ListItem>
+        </List>
+      </Collapse>
+    </List>
+        <List>
+        <ListItem >
+              <ListItemIcon> <img src={vendor} alt="" style={{width:'50%' , color:'darkgray'}}/> </ListItemIcon>
+              <ListItemText > <span >Vendors</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem >
+              <ListItemIcon> <img src={invoice1} alt="" style={{width:'50%' , color:'darkgray', marginRight:'30%'}}/> </ListItemIcon>
+              <ListItemText > <span >Invoices</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem >
+              <ListItemIcon> <img src={store} alt="" style={{width:'50%' , color:'darkgray', marginRight:'30%'}}/> </ListItemIcon>
+              <ListItemText > <span >Store</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem >
+              <ListItemIcon> <ChatOutlinedIcon style={{color:"#8392A7"}}/> </ListItemIcon>
+              <ListItemText > <span >Help</span></ListItemText>
+            </ListItem>
+        </List>
+
+        
+
+        <Divider />
+      </Drawer>
+ 
+    </div>
   );
 }
-
-export default withRouter(Sidebar);
