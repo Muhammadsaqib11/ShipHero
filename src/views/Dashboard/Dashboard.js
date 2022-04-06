@@ -82,140 +82,24 @@ function Dashboard() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    document.getElementById("content").style.width = "250%";
+    document.getElementById("content").style.width = "150%";
+    document.getElementById("content").style.marginRight = "5%";
+    document.getElementById("content").style.marginTop = "2%";
+
+
 
   }, []);
   return (
     <div className="w-full">
-      <div className="row" style={{ width: "98%", margin: "2%" }}>
-        <Card className="w-98">
+     
+        <Card className="w-full">
           <CardContent>
             <Typography className="h2" color="textPrimary">
               Dashboard
             </Typography>
           </CardContent>
         </Card>
-      </div>
-
-      <div className="row" style={{ width: "97%", margin: "2%" }}>
-        <div className="col-lg-3 col-md-4 col-sm-12 m-0 p-0">
-          <Card className=" h-60 d-flex w-98">
-            <div className="widget DashboardCards p-16">
-              <FileCopyIcon />
-              <Typography className="h3 pt-16" color="textSecondary">
-                My Policies
-              </Typography>
-
-              <div className="CircleDiv">
-                <Avatar className={classes.orange}>N</Avatar>
-              </div>
-            </div>
-            {/* </CardContent> */}
-          </Card>
-        </div>
-        <div className="col-lg-3 col-md-4 col-sm-12 m-0 p-0">
-          <Card className=" h-60 w-98">
-            <div className="widget DashboardCards p-16">
-              {/* <CardContent className =""> */}
-
-              <FindInPageIcon />
-              <Typography className="h3 pt-16" color="textSecondary">
-                Certificates
-              </Typography>
-
-              <div className="CircleDiv">
-                <Avatar className={classes.purple}>OP</Avatar>
-              </div>
-
-              {/* </CardContent> */}
-            </div>
-          </Card>
-        </div>
-
-        <div className="col-lg-3 col-md-4 col-sm-12 m-0 p-0">
-          <Card className="h-60 w-98">
-            <div className="widget DashboardCards p-16">
-              {/* <CardContent className =""> */}
-
-              <TrendingUpIcon />
-              <Typography className="h3 pt-16" color="textSecondary">
-                Installments
-              </Typography>
-
-              <div className="CircleDiv">
-                <Avatar>H</Avatar>
-              </div>
-            </div>
-            {/* </CardContent> */}
-          </Card>
-        </div>
-
-        <div className="col-lg-3 col-md-4 col-sm-12 m-0 p-0">
-          <Card className="h-60 w-98">
-            {/* <CardContent className =""> */}
-            <div className="widget DashboardCards p-16">
-              <MonetizationOnIcon />
-              <Typography className="h3 pt-16" color="textSecondary">
-                Premiums
-              </Typography>
-
-              <div className="CircleDiv">
-                <Avatar>H</Avatar>
-              </div>
-            </div>
-            {/* </CardContent> */}
-          </Card>
-        </div>
-      </div>
-
-      <div className="row" style={{ width: "98%", margin: "2%" }}>
-        <Card className="w-98">
-          <CardContent>
-            <Typography className="h2 p-16" color="textPrimary">
-              Live Tracking
-            </Typography>
-            <Tracking />
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="row" style={{ width: "98%", margin: "2%" }}>
-        <Card className="w-98">
-          <Accordion className={classes.accordionContent}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>My Policies</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div style={{ height: 320, width: "100%" }}>
-                <DataGrid rows={rows} columns={columns} pageSize={10} />
-              </div>
-            </AccordionDetails>
-          </Accordion>
-        </Card>
-      </div>
-
-      <div className="row" style={{ width: "98%", margin: "2%" }}>
-        <Card className="w-98">
-          <Accordion className={classes.accordionContent}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>My Documents</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div style={{ height: 320, width: "100%" }}>
-                <DataGrid rows={rows} columns={columns} pageSize={10} />
-              </div>
-            </AccordionDetails>
-          </Accordion>
-        </Card>
-      </div>
+     
     </div>
   );
 }

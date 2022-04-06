@@ -36,7 +36,7 @@ export default function Login(props) {
   // const userAuth = useSelector((state) => state.auth);
   console.log("auth", isAuthenticated);
   useEffect(() => {
-    document.getElementById("content").style.width = "100%";
+    // document.getElementById("content").style.width = "100%";
     // if (userToken && isAuthenticated) {
     //   history.push("/");
     // }
