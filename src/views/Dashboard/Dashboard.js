@@ -20,6 +20,13 @@ import FileCopyIcon from "@material-ui/icons/FileCopy";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
+import revenue from '../../Assets/Img/revenue.png'
+import orderShip from '../../Assets/Img/orderShip.png'
+
+
+
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -82,24 +89,103 @@ function Dashboard() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    document.getElementById("content").style.width = "150%";
-    document.getElementById("content").style.marginRight = "5%";
+    // document.getElementById("content").style.width = "150%";
+    // document.getElementById("content").style.marginRight = "5%";
     document.getElementById("content").style.marginTop = "2%";
-
-
-
   }, []);
   return (
     <div className="w-full">
-     
-        <Card className="w-full">
-          <CardContent>
-            <Typography className="h2" color="textPrimary">
-              Dashboard
-            </Typography>
-          </CardContent>
-        </Card>
-     
+      <div className="mt-3">
+        <div className="row">
+          <div className="col-lg-4">
+          <h6 className ="ml-3 startingHeading"  >Get started with stress-free fulfillment</h6>
+            </div>
+          <div className="col-lg-8"/>
+        </div>
+      {/* <hr/> */}
+        </div>
+        <div className="row mt-2" >
+        <div className="col-lg-8 borderGray" style={{backgroundColor:"blac"}} >
+        <div className="row" >
+        <div className="col-lg-3" >
+        </div>
+        <div className="col-lg-6" >
+        <div className="align_center  flexRow mt-4">
+        <h5 className ="startingHeading mt-3">Connect Yours</h5>
+        <select className="form-select mt-1 dashboardDD" aria-label="Default select example" >
+          <option selected>Shopiy Store</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        </div>
+</div>
+<div className="col-lg-3">
+    </div>
+        </div>
+        <div className="storeFormContainer">
+        <span className="hvyap">If you would like to connect an additional Shopify store, go to our ShipHero Fulfillment app page on Shopify App Store and click the install button.</span>
+        <button type="button" class="btn btn-primary">Visit Shopify App Store to connect your store</button>
+
+    </div>
+        </div>
+          <div className="col-lg-4 borderGray pt-4 pl-4" >
+          <p className="themeperagrapgh">1. Create Your Account <CheckCircleOutlineOutlinedIcon style={{width:'20px' ,color:'green'}}/></p>
+          <p className="themeperagrapgh">2. Connect your store</p>
+          <p className="themeperagrapgh">3. Store information setup</p>
+          <p className="themeperagrapgh">4. Send products to a warehouse</p>
+          <p className="themeperagrapgh"> All done! Start tracking fulfillment</p>
+        </div>
+        </div>
+        <div className="row mt-3">
+          <div className="col-lg-6">
+            <div className = "flexRowHorizantal">
+            <div className="miniCard">
+            <img src={revenue} alt="" style={{width:'28%'}}/> 
+            <p className="p_black"> Today's Revenue</p>
+            
+            </div>
+            <div className="miniCard">
+            <img src={orderShip} alt="" style={{width:'28%'}}/> 
+            <p className="p_black"> Today's Revenue</p>
+            
+            </div>
+            <div className="miniCard">
+            <img src={revenue} alt="" style={{width:'28%'}}/> 
+            <p className="p_black"> Today's Revenue</p>
+            
+            </div>
+           
+
+            </div>
+
+            
+
+          </div>
+          <div className="col-lg-6">
+          <div className = "flexRowHorizantal">
+            <div className="miniCard">
+            <img src={revenue} alt="" style={{width:'28%'}}/> 
+            <p className="p_black"> Today's Revenue</p>
+            
+            </div>
+            <div className="miniCard">
+            <img src={orderShip} alt="" style={{width:'28%'}}/> 
+            <p className="p_black"> Today's Revenue</p>
+            
+            </div>
+            <div className="miniCard">
+            <img src={revenue} alt="" style={{width:'28%'}}/> 
+            <p className="p_black"> Today's Revenue</p>
+            
+            </div>
+           
+
+            </div>
+
+</div>
+        </div>
     </div>
   );
 }

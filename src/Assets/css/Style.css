@@ -1,6 +1,15 @@
 .h-100 {
   height: 100vh;
 }
+.h-50 {
+  height: 50vh !important;
+}
+.h-60 {
+  height: 60vh !important;
+}
+.h-30 {
+  height: 30vh;
+}
 .bg-color {
 }
 .shadow {
@@ -34,6 +43,9 @@
 .pt-5 {
   padding-top: 5rem;
 }
+.p-0{
+  padding: 0% !important;
+}
 .pt-3 {
   padding-top: 3rem;
 }
@@ -47,7 +59,10 @@
   margin-right: 3rem;
 }
 .ml-3 {
-  margin-left: 3rem;
+  margin-left: 3rem !important;
+}
+.ml-4 {
+  margin-left: 4rem !important;
 }
 .w-88 {
   width: 88%;
@@ -103,7 +118,7 @@
   padding-top: 0.4rem;
 }
 .mt-4 {
-  margin-top: 0.4rem;
+  margin-top: 4rem !important;
 }
 .ft-l {
   float: left;
@@ -293,7 +308,7 @@ a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 #sideBarContent {
-  width: 18%;
+  /* width: 18%; */
   padding: 0px !important;
 }
 
@@ -425,6 +440,9 @@ a.article:hover {
 .profile-img {
   text-align: center;
 }
+.align_center {
+  text-align: center;
+}
 .profile-img img {
   width: 70%;
   height: 100%;
@@ -519,4 +537,70 @@ a.article:hover {
 }
 .dd1:active {
   border: 2px solid #e8f0fe !important;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+.dashboardDD{
+height: 6vh ;
+border: 1px solid lightgray;
+border-radius: 5px;
+margin-left: 2%;
+width: 45%;
+padding-left: 2%;
+font-size: 16px;
+}
+.storeFormContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  padding-bottom: 2%;
+}
+.hvyap{
+    text-align: center;
+    margin-bottom: 2%;
+    max-width: 44%;
+}
+.borderGray{
+  border: 1px solid lightgray;
+  /* border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray; */
+}
+.themeperagrapgh{
+  font-size: 14px;
+  color: rgb(131, 146, 167);
+  font-weight: 400;
+  margin-top: 1%;
+}
+
+.p_black{
+  font-size: 16px;
+  color: black;
+  font-weight: 400;
+  margin-top: 2%;
+}
+.flexRowHorizantal {
+  display: flex;
+  flex-direction: row;
+  /* background-color: blue; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+.miniCard{
+  width: 33%;
+  height: 15vh;
+  border: 1px solid #C0CCDB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

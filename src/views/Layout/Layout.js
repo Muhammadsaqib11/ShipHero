@@ -44,8 +44,11 @@ function Layout(props) {
    <Sidebar />
  </div>
  <main className={classes.content} id="content">
-     <div className={classes.toolbar} />
+     <div className="row"/>
+     <div className = "col-lg-12 p-0">
      {props.children}
+     </div>
+    
 
    </main>
 
