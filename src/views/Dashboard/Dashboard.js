@@ -24,6 +24,7 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import revenue from '../../Assets/Img/revenue.png'
 import orderShip from '../../Assets/Img/orderShip.png'
+import StoreOrder from './SroreOrder'
 
 
 
@@ -118,7 +119,6 @@ function Dashboard() {
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
-
         </div>
 </div>
 <div className="col-lg-3">
@@ -126,12 +126,15 @@ function Dashboard() {
         </div>
         <div className="storeFormContainer">
         <span className="hvyap">If you would like to connect an additional Shopify store, go to our ShipHero Fulfillment app page on Shopify App Store and click the install button.</span>
-        <button type="button" class="btn btn-primary">Visit Shopify App Store to connect your store</button>
-
+        <button type="button" class="btn btn-primary">
+          Visit Shopify App Store to connect your store
+        </button>
     </div>
         </div>
           <div className="col-lg-4 borderGray pt-4 pl-4" >
-          <p className="themeperagrapgh">1. Create Your Account <CheckCircleOutlineOutlinedIcon style={{width:'20px' ,color:'green'}}/></p>
+          <p className="themeperagrapgh">1. Create Your Account 
+             <CheckCircleOutlineOutlinedIcon style={{width:'20px' ,color:'green'}}/>
+          </p>
           <p className="themeperagrapgh">2. Connect your store</p>
           <p className="themeperagrapgh">3. Store information setup</p>
           <p className="themeperagrapgh">4. Send products to a warehouse</p>
@@ -144,24 +147,16 @@ function Dashboard() {
             <div className="miniCard">
             <img src={revenue} alt="" style={{width:'28%'}}/> 
             <p className="p_black"> Today's Revenue</p>
-            
             </div>
             <div className="miniCard">
             <img src={orderShip} alt="" style={{width:'28%'}}/> 
             <p className="p_black"> Today's Revenue</p>
-            
             </div>
             <div className="miniCard">
             <img src={revenue} alt="" style={{width:'28%'}}/> 
             <p className="p_black"> Today's Revenue</p>
-            
             </div>
-           
-
             </div>
-
-            
-
           </div>
           <div className="col-lg-6">
           <div className = "flexRowHorizantal">
@@ -186,6 +181,9 @@ function Dashboard() {
 
 </div>
         </div>
+        <StoreOrder/>
+        <StoreOrder/>
+        <StoreOrder/>
     </div>
   );
 }

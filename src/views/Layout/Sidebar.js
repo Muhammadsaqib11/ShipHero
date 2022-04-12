@@ -37,7 +37,7 @@ import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
 import orders from '../../Assets/Img/orders.png'
 import shipment from '../../Assets/Img/shipment.png'
 import postHero from '../../Assets/Img/postHero.png'
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -176,7 +176,8 @@ export default function MiniDrawer() {
         <List>
         <ListItem >
               <ListItemIcon> <img src={Sidebarlogo} alt=""/> </ListItemIcon>
-              <ListItemText className={classes.primaryColor}> <img src={shipHero} alt=""/> </ListItemText>
+              <ListItemText className={classes.primaryColor}>
+                <img src={shipHero} alt=""/> </ListItemText>
             </ListItem>
         </List>
           {/* <IconButton onClick={handleDrawerClose}>
@@ -185,7 +186,7 @@ export default function MiniDrawer() {
         {/* </div> */}
         <Divider />
         <List>
-        <ListItem >
+        <ListItem  component={Link} to="/dashbord">
               <ListItemIcon> <DashboardIcon color="primary" /> </ListItemIcon>
               <ListItemText className={classes.primaryColor}> <span className="primaryColor">Dashboard</span></ListItemText>
             </ListItem>
@@ -208,7 +209,7 @@ export default function MiniDrawer() {
       </ListItem>
       <Collapse in={openReportMenu} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem button >
+          <ListItem button  component={Link} to="/dashbord/order">
             <ListItemIcon>
               {/* <StarBorder /> */}
             </ListItemIcon>

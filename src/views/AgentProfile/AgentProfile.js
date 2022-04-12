@@ -103,7 +103,6 @@ function AgentProfile() {
           console.log("res", res);
           setState({
             ...state,
-
             first_name: res.data.agent.first_name,
             last_name: res.data.agent.last_name,
             email: res.data.email,
@@ -116,7 +115,6 @@ function AgentProfile() {
             imo_name: res.data.agent.imo_name,
             agency_name: res.data.agent.agency_name,
             agent_type: res.data.agent.agent_type,
-
             password: res.data.password,
             confirmPassword: res.data.confirmPassword,
           });
@@ -149,7 +147,6 @@ function AgentProfile() {
     // formData.append("user_id", user_id);
 
     // setLoading(true); axios
-
     api
       .editProfile(formData)
       .then((res) => {

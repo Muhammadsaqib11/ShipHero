@@ -596,11 +596,153 @@ font-size: 16px;
   /* justify-content: space-between; */
 }
 .miniCard{
-  width: 33%;
-  height: 15vh;
-  border: 1px solid #C0CCDB;
   display: flex;
-  justify-content: center;
+  flex: 1 1 0%;
+  padding:2%;
+  flex-direction: column;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-right: 1px solid rgb(231, 237, 248);
+  border-top: 1px solid rgb(231, 237, 248);
+  border-bottom: 1px solid rgb(231, 237, 248);
+}
+.data_ui{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 30px !important;
+  border-bottom: 1px solid rgb(231, 237, 248);
+}
+.store_image{
+  width: 13%;
+  margin-bottom: 2%;
+}
+.store_content{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  margin-block: 0px;
+  font-size: 15px;
+}
+
+.headerOrder{
+  width: 95%;
+  margin: 20px 0px 10px 25px;
+  display: flex;
   flex-direction: column;
 }
+
+.header__row{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.Texts_Display{
+    font-weight: bold;
+    color: rgb(38, 52, 69);
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.buttonColor{
+  background-color: #2B73E2 !Important;
+}
+.AppBarStyle{
+  padding:1% !Important;
+  /* margin: 1% !important; */
+}
+
+.PrivateTabIndicator-colorPrimary-21{
+  background-color: #3f51b5 !important;
+  width: 5% !important;
+  margin-left: 3% !important;
+}
+.MuiTab-wrapper {
+  font-weight: bold;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13px;
+  color: #9392A7;
+}
+.filterRowFields {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 14px;
+}
+.DD_TF {
+  display: flex;
+  width: 81%;
+  flex-direction: row;
+}
+.OrdersReportSearch {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  margin-right: 5px;
+}
+.InputAction__Content{
+  display: flex;
+  flex-direction: row;
+}
+.input_action_content{
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+.searchBar{
+  border: 1px solid rgb(231, 237, 248) !important;
+}
+.filterDD{
+  width: 100%;
+  padding: 3.9% !important;
+  border: 1px solid rgb(231, 237, 248) !important;
+}
+.makeStyles-search-30 {
+  width: auto !important;
+  margin-left: 0px !important;
+}
+.MuiPaper-elevation4{
+  box-shadow: none !important;
+  border: 1px solid rgb(231, 237, 248) !important;
+}
+.tabPanalOrchard{
+  border: 1px solid rgb(231, 237, 248) !important;
+}
+.DDButton{
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid rgb(231, 237, 248) !important;
+    text-transform: capitalize !important;
+
+}
+.borderBottom{
+  border-bottom: 1px solid rgb(231, 237, 248) !important;
+}
+.ExportMenu{
+    list-style-type: none;
+    white-space: nowrap;
+    min-width: 200px;
+}
+.ListItem{
+  padding: 4px 15px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 40px;
+  color: rgb(38, 52, 69);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+
