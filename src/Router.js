@@ -9,6 +9,8 @@ import { ToastContainer } from "./components/Toast";
 import { useSelector } from "react-redux";
 import Layout from "./views/Layout/Layout";
 import OrderDetail from './views/Orders/OrderDetail'
+import CreateOrder from './views/Orders/CreateOrder'
+
 
 export default function Router() {
   const { darkMode } = useSelector((state) => state.Auth);
@@ -22,6 +24,8 @@ export default function Router() {
           <Route exact path="/forgot-password" component={ForgotPassword} />
           <Route exact path="/dashbord" component={Dashboard} />
           <Route exact path="/dashbord/order" component={OrderDetail} />
+          <Route exact path="/dashbord/createNewOrder" component={CreateOrder} />
+
 
 
           
