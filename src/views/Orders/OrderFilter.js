@@ -185,11 +185,10 @@ const OrderFilter = (props) => {
             {openExport  ?
             (    
             <div style={{border:'1px solid gray', marginBottom:'2%'}}>
-                <ul className="ExportMenu">
+                <ul className="ExportMenu" onMouseLeave={handleCloseExport}>
                     <li className="ListItem">All Orders</li>
                     <li className="ListItem">Visible Rows to CSV</li>
                 </ul>
-
             </div>
         )
         :''
