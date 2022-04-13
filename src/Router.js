@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import Layout from "./views/Layout/Layout";
 import OrderDetail from './views/Orders/OrderDetail'
 import CreateOrder from './views/Orders/CreateOrder'
+import ProductDetail from './views/Products/ProductDetail'
+import CreateProducts from './views/Products/CreateProducts'
 
 
 export default function Router() {
@@ -25,10 +27,8 @@ export default function Router() {
           <Route exact path="/dashbord" component={Dashboard} />
           <Route exact path="/dashbord/order" component={OrderDetail} />
           <Route exact path="/dashbord/createNewOrder" component={CreateOrder} />
-
-
-
-          
+          <Route exact path="/dashbord/product" component={ProductDetail} />
+          <Route exact path="/dashbord/product/createProduct" component={ProductDetail} />
 
           {/* <ProtectedRoutes> */}
           {/* <CheckSession> */}

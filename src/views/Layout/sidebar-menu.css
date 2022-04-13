@@ -1,9 +1,15 @@
 
 
 .primaryColor{
-    font-size: 14px !important;
+    font-size: 13px !important;
     color: rgb(50, 129, 253) !important;
-    font-weight: bold !important;
+    font-weight: 300 !important;
+}
+
+.defaultColor{
+    font-size: 13px !important;
+    color:gray !important;
+    font-weight: 300 !important;
 }
 .Invoices{
     padding-left: 9% !important;

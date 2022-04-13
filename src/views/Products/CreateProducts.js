@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#F9FAFC",
     },
   }));
-const CreateOrder = (props) => {
+const CreateProducts = (props) => {
     const classes = useStyles();
     const [firstName, setFirstName] = React.useState(0);
     return (
@@ -66,14 +66,18 @@ const CreateOrder = (props) => {
               </div>
               <div className="dEgCwM">
                 {/* <Button>Add Item</Button> */}
+
+
               </div>
+
+
             </div>
            <div className="order-detail-wrapper">
              <div className="flex-column w-full">
                <div className="pt-3 inputBlock">
               <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-              Order number
-              </InputLabel>
+          Order number
+          </InputLabel>
           <CustomTextField
             // value={dob}
             autoComplete={false}
@@ -404,4 +408,4 @@ const CreateOrder = (props) => {
     </div>
     );
 }
-export default CreateOrder;
+export default CreateProducts;

@@ -120,9 +120,9 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(4),
   },
   primaryColor:{
-    fontSize:'14px',
+    fontSize:'12px',
     color:'#3f51b5',
-    fontWeight:'bold'
+    fontWeight:'600'
   }
 }));
 
@@ -175,7 +175,7 @@ export default function MiniDrawer() {
         {/* <div className={classes.toolbar}> */}
         <List>
         <ListItem >
-              <ListItemIcon> <img src={Sidebarlogo} alt=""/> </ListItemIcon>
+              <ListItemIcon> <img src={Sidebarlogo} alt="" /> </ListItemIcon>
               <ListItemText className={classes.primaryColor}>
                 <img src={shipHero} alt=""/> </ListItemText>
             </ListItem>
@@ -187,7 +187,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
         <ListItem  component={Link} to="/dashbord">
-              <ListItemIcon> <DashboardIcon color="primary" /> </ListItemIcon>
+              <ListItemIcon> <DashboardIcon color="primary" width="30" /> </ListItemIcon>
               <ListItemText className={classes.primaryColor}> <span className="primaryColor">Dashboard</span></ListItemText>
             </ListItem>
         </List>
@@ -204,48 +204,48 @@ export default function MiniDrawer() {
         <img src={orders} alt="" style={{width:'50%' , color:'darkgray'}}/>
 
         </ListItemIcon>
-        <ListItemText primary="Orders" />
+        <ListItemText ><span className="defaultColor">Orders</span></ListItemText>
         {openMenu ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={openReportMenu} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem button  component={Link} to="/dashbord/order">
+          <ListItem button component={Link} to="/dashbord/order">
             <ListItemIcon>
               {/* <StarBorder /> */}
             </ListItemIcon>
-            <ListItemText  >Orders</ListItemText>
+            <ListItemText > <span className="defaultColor">Orders</span></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               {/* <StarBorder /> */}
             </ListItemIcon>
-            <ListItemText primary="Upload CSV" />
+            <ListItemText ><span className="defaultColor">Upload CSV</span></ListItemText>
           </ListItem>
         </List>
       </Collapse>
     </List>
     <List>
-        <ListItem >
+        <ListItem component={Link} to="/dashbord/product">
               <ListItemIcon> <LocalOfferTwoToneIcon style={{color:"#8392A7"}} /> </ListItemIcon>
-              <ListItemText className={classes.primaryColor}> <span>Products</span></ListItemText>
+              <ListItemText className={classes.defaultColor}> <span className="defaultColor">Products</span></ListItemText>
             </ListItem>
         </List>
         <List>
         <ListItem >
               <ListItemIcon><img src={shipment} alt="" style={{width:'50%' , color:'darkgray'}}/> </ListItemIcon>
-              <ListItemText > <span >Shipping Plans</span></ListItemText>
+              <ListItemText className={classes.defaultColor} > <span className="defaultColor" >Shipping Plans</span></ListItemText>
             </ListItem>
         </List>
         <List>
         <ListItem >
               <ListItemIcon> <CachedTwoToneIcon style={{color:"#8392A7"}} /> </ListItemIcon>
-              <ListItemText > <span >Returns</span></ListItemText>
+              <ListItemText  className={classes.defaultColor}> <span className="defaultColor" >Returns</span></ListItemText>
             </ListItem>
         </List>
         <List>
         <ListItem >
               <ListItemIcon>  <img src={postHero} alt="" style={{width:'50%' , color:'darkgray'}}/> </ListItemIcon>
-              <ListItemText > <span >Post Hero</span></ListItemText>
+              <ListItemText className={classes.defaultColor}> <span className="defaultColor" >Post Hero</span></ListItemText>
             </ListItem>
         </List>
         <List
@@ -258,7 +258,7 @@ export default function MiniDrawer() {
         <ListItemIcon>
           <LocalAtmIcon style={{color:"#8392A7"}}/>
         </ListItemIcon>
-        <ListItemText primary="Reports" />
+        <ListItemText ><span className="defaultColor" >Reports</span></ListItemText>
         {openMenu ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={openMenu} timeout="auto" unmountOnExit>
@@ -267,56 +267,53 @@ export default function MiniDrawer() {
             <ListItemIcon>
               {/* <StarBorder /> */}
             </ListItemIcon>
-            <ListItemText  >Shipment</ListItemText>
+            <ListItemText  className={classes.primaryColor}> <span className="defaultColor" >Shipment</span></ListItemText>
+          </ListItem>
+          <ListItem button >
+            <ListItemIcon>
+              {/* <StarBorder /> */}
+            </ListItemIcon> 
+            <ListItemText  className={classes.primaryColor}> <span className="defaultColor" >Shipped Item</span></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               {/* <StarBorder /> */}
             </ListItemIcon>
-            <ListItemText primary="Shipped Item" />
+            <ListItemText  className={classes.primaryColor}> <span className="defaultColor" >Order Permanently</span></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               {/* <StarBorder /> */}
             </ListItemIcon>
-            <ListItemText primary="Order Permanently" />
-          </ListItem>
-          <ListItem button >
-            <ListItemIcon>
-              {/* <StarBorder /> */}
-            </ListItemIcon>
-            <ListItemText primary="Storage" />
+            <ListItemText  className={classes.primaryColor}> <span className="defaultColor" >Storage</span></ListItemText>
           </ListItem>
         </List>
       </Collapse>
     </List>
         <List>
         <ListItem >
-              <ListItemIcon> <img src={vendor} alt="" style={{width:'50%' , color:'darkgray'}}/> </ListItemIcon>
-              <ListItemText > <span >Vendors</span></ListItemText>
+              <ListItemIcon> <img src={vendor} alt="" style={{width:'45%' , color:'darkgray'}}/> </ListItemIcon>
+              <ListItemText className={classes.primaryColor} > <span  className="defaultColor">Vendors</span></ListItemText>
             </ListItem>
         </List>
         <List>
         <ListItem >
-              <ListItemIcon> <img src={invoice1} alt="" style={{width:'50%' , color:'darkgray', marginRight:'30%'}}/> </ListItemIcon>
-              <ListItemText > <span >Invoices</span></ListItemText>
+              <ListItemIcon> <img src={invoice1} alt="" style={{width:'30%' , color:'darkgray', marginRight:'30%'}}/> </ListItemIcon>
+              <ListItemText className={classes.primaryColor} > <span className="defaultColor">Invoices</span></ListItemText>
             </ListItem>
         </List>
         <List>
         <ListItem >
-              <ListItemIcon> <img src={store} alt="" style={{width:'50%' , color:'darkgray', marginRight:'30%'}}/> </ListItemIcon>
-              <ListItemText > <span >Store</span></ListItemText>
+              <ListItemIcon> <img src={store} alt="" style={{width:'45%' , color:'darkgray', marginRight:'30%'}}/> </ListItemIcon>
+              <ListItemText className={classes.primaryColor} > <span className="defaultColor">Store</span></ListItemText>
             </ListItem>
         </List>
         <List>
         <ListItem >
               <ListItemIcon> <ChatOutlinedIcon style={{color:"#8392A7"}}/> </ListItemIcon>
-              <ListItemText > <span >Help</span></ListItemText>
+              <ListItemText className={classes.primaryColor} > <span className="defaultColor" >Help</span></ListItemText>
             </ListItem>
         </List>
-
-        
-
         <Divider />
       </Drawer>
  
