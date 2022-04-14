@@ -68,7 +68,7 @@ export default function ScrollableTabsButtonAuto(props) {
     setValue(newValue);
   }
   const CreateOrderHandleChange = () => {
-    history.push(`/dashbord/createNewOrder`);
+    history.push(`/dashbord/product/createProduct`);
   }
 
   return (

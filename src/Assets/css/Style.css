@@ -847,7 +847,6 @@ font-size: 16px;
 }
 .order-detail-wrapper {
   margin: 0px;
-  height: 50vh;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -891,4 +890,25 @@ font-size: 16px;
  .MuiTab-root:focus{
   border: none !important;
   color:white;
+}
+
+
+.Text-Area-Form{
+  border: 1px solid #E1E1E2 !important;
+  padding: 1.15rem 0.75rem !important;
+}
+.Text-Area-Form:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  border: 1px solid #2B73E2 !important;
+  box-shadow: none !important;
+}
+.card_content{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(63 63 68 / 15%) 0px 1px 3px 0px;
+  width: 100%;
+  margin-bottom: 2%;
+  /* padding-bottom: 2%; */
 }

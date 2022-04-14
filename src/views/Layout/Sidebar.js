@@ -39,16 +39,6 @@ import shipment from '../../Assets/Img/shipment.png'
 import postHero from '../../Assets/Img/postHero.png'
 import { Link } from 'react-router-dom';
 
-
-
-
-
-
-
-
-
-
-
 import './sidebar-menu.css'
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -132,23 +122,15 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
   const [openReportMenu, setOpenReportMenu] = React.useState(false);
-
-
-
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleClick = () => {
     setOpenMenu(!openMenu);
   };
-
   const handleClickReport = () => {
     setOpenReportMenu(!openReportMenu);
   };
-
-  
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
