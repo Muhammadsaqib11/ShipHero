@@ -28,7 +28,7 @@ export default function Router() {
           <Route exact path="/dashbord/order" component={OrderDetail} />
           <Route exact path="/dashbord/createNewOrder" component={CreateOrder} />
           <Route exact path="/dashbord/product" component={ProductDetail} />
-          <Route exact path="/dashbord/product/createProduct" component={ProductDetail} />
+          <Route exact path="/dashbord/product/createProduct" component={CreateProducts} />
 
           {/* <ProtectedRoutes> */}
           {/* <CheckSession> */}

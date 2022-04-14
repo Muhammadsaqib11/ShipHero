@@ -19,7 +19,7 @@ export default function CustomeTextArea(props) {
         <TextareaAutosize
           aria-label="minimum height"
           className={className}
-          rowsMin={10}
+          rowsMin={5}
           variant="outlined"
           {...props}
         />
