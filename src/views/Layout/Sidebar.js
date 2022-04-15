@@ -273,7 +273,7 @@ export default function MiniDrawer() {
       </Collapse>
     </List>
         <List>
-        <ListItem >
+        <ListItem component={Link} to="/dashbord/vendors">
               <ListItemIcon> <img src={vendor} alt="" style={{width:'45%' , color:'darkgray'}}/> </ListItemIcon>
               <ListItemText className={classes.primaryColor} > <span  className="defaultColor">Vendors</span></ListItemText>
             </ListItem>

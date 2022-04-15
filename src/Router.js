@@ -12,6 +12,10 @@ import OrderDetail from './views/Orders/OrderDetail'
 import CreateOrder from './views/Orders/CreateOrder'
 import ProductDetail from './views/Products/ProductDetail'
 import CreateProducts from './views/Products/CreateProducts'
+import VendorDetail from './views/Vendor/VendorDetail'
+import CreateVendors from './views/Vendor/CreateVendors'
+
+
 
 
 export default function Router() {
@@ -29,6 +33,10 @@ export default function Router() {
           <Route exact path="/dashbord/createNewOrder" component={CreateOrder} />
           <Route exact path="/dashbord/product" component={ProductDetail} />
           <Route exact path="/dashbord/product/createProduct" component={CreateProducts} />
+          <Route exact path="/dashbord/vendors" component={VendorDetail} />
+          <Route exact path="/dashbord/vendors/createvendor" component={CreateVendors} />
+
+
 
           {/* <ProtectedRoutes> */}
           {/* <CheckSession> */}
