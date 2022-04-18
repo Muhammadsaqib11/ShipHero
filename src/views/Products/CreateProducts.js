@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 import InputLabel from "@material-ui/core/InputLabel";
 import Button from '@material-ui/core/Button';
 import itemImage from '../../Assets/itemImage.png'
+import DynamicVariant from "./DynamicVariant";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -164,120 +165,10 @@ const CreateProducts = (props) => {
               <div className="order-detail-wrapper">
                 <div className="flex-column w-full">
                 <div className="form_input_block" >
-                  <div className="pt-3 twoinputBlock">
-                    <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-                      Variant Name
-                      </InputLabel>
-                    <CustomTextField
-                      // value={dob}
-                      autoComplete={false}
-                      type="text"
-                      placeholder="Variant Name"
-                      dummyClass="w-90"
-                    // error={error}
-                    // message={dobError}
-                    // onChange={(e) => {
-                    //   setDob(e.target.value);
-                    //   setError(false);
-                    // }}
-                    />
-                  </div>
-                  <div className="pt-3 twoinputBlock">
-                    <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-                      Sku
-                      </InputLabel>
-                    <CustomTextField
-                      // value={dob}
-                      dummyClass="w-90"
-                      autoComplete={false}
-                      type="text"
-                      placeholder="Sku"
-                    // error={error}
-                    // message={dobError}
-                    // onChange={(e) => {
-                    //   setDob(e.target.value);
-                    //   setError(false);
-                    // }}
-                    />
+                  <div className="pt-3 twoinputBlockThree">
+                  <DynamicVariant/>
                   </div>
                 </div>
-                <div className="form_input_block" >
-                  <div className="pt-3 twoinputBlock">
-                    <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-                      BarCode
-                      </InputLabel>
-                    <CustomTextField
-                      // value={dob}
-                      autoComplete={false}
-                      type="text"
-                      placeholder="BarCode"
-                      dummyClass="w-90"
-                    // error={error}
-                    // message={dobError}
-                    // onChange={(e) => {
-                    //   setDob(e.target.value);
-                    //   setError(false);
-                    // }}
-                    />
-                  </div>
-                  <div className="pt-3 twoinputBlock">
-                    <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-                      Price
-                      </InputLabel>
-                    <CustomTextField
-                      // value={dob}
-                      dummyClass="w-90"
-                      autoComplete={false}
-                      type="text"
-                      placeholder="Price"
-                    // error={error}
-                    // message={dobError}
-                    // onChange={(e) => {
-                    //   setDob(e.target.value);
-                    //   setError(false);
-                    // }}
-                    />
-                  </div>
-                </div>
-                <div className="form_input_block" >
-                  <div className="pt-3 twoinputBlock">
-                    <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-                      Cost
-                      </InputLabel>
-                    <CustomTextField
-                      // value={dob}
-                      autoComplete={false}
-                      type="text"
-                      placeholder="Cost"
-                      dummyClass="w-90"
-                    // error={error}
-                    // message={dobError}
-                    // onChange={(e) => {
-                    //   setDob(e.target.value);
-                    //   setError(false);
-                    // }}
-                    />
-                  </div>
-                  <div className="pt-3 twoinputBlock">
-                    <InputLabel htmlFor="my-input" className="text-black text-14 pt-2">
-                      PAR L
-                      </InputLabel>
-                    <CustomTextField
-                      // value={dob}
-                      dummyClass="w-90"
-                      autoComplete={false}
-                      type="text"
-                      placeholder="Ex. MO-01"
-                    // error={error}
-                    // message={dobError}
-                    // onChange={(e) => {
-                    //   setDob(e.target.value);
-                    //   setError(false);
-                    // }}
-                    />
-                  </div>
-                </div>
-
                 </div>
               </div>
             </section>

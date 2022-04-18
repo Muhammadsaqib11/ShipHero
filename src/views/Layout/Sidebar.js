@@ -44,6 +44,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    // backgroundColor:'blue'
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -70,6 +71,8 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
+    overflow:'hidden',
+    backgroundColor:'blue'
   },
   drawerOpen: {
     width: drawerWidth,
@@ -173,8 +176,6 @@ export default function MiniDrawer() {
               <ListItemText className={classes.primaryColor}> <span className="primaryColor">Dashboard</span></ListItemText>
             </ListItem>
         </List>
-  
-        
    <List
       component="nav"
       aria-labelledby="nested-list-subheader"
@@ -210,6 +211,12 @@ export default function MiniDrawer() {
         <ListItem component={Link} to="/dashbord/product">
               <ListItemIcon> <LocalOfferTwoToneIcon style={{color:"#8392A7"}} /> </ListItemIcon>
               <ListItemText className={classes.defaultColor}> <span className="defaultColor">Products</span></ListItemText>
+            </ListItem>
+        </List>
+        <List>
+        <ListItem component={Link} to="/dashbord/category">
+              <ListItemIcon> <LocalOfferTwoToneIcon style={{color:"#8392A7"}} /> </ListItemIcon>
+              <ListItemText className={classes.defaultColor}> <span className="defaultColor">Category</span></ListItemText>
             </ListItem>
         </List>
         <List>
