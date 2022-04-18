@@ -14,6 +14,8 @@ import ProductDetail from './views/Products/ProductDetail'
 import CreateProducts from './views/Products/CreateProducts'
 import VendorDetail from './views/Vendor/VendorDetail'
 import CreateVendors from './views/Vendor/CreateVendors'
+import CategoryDetail from './views/Category/CategoryDetail'
+import CreateCategory from './views/Category/CreateCategory'
 
 
 
@@ -35,9 +37,8 @@ export default function Router() {
           <Route exact path="/dashbord/product/createProduct" component={CreateProducts} />
           <Route exact path="/dashbord/vendors" component={VendorDetail} />
           <Route exact path="/dashbord/vendors/createvendor" component={CreateVendors} />
-
-
-
+          <Route exact path="/dashbord/category" component={CategoryDetail} />
+          <Route exact path="/dashbord/category/createCategory" component={CreateCategory} />
           {/* <ProtectedRoutes> */}
           {/* <CheckSession> */}
           {/* <Route exact path="/" component={Dashboard} />
